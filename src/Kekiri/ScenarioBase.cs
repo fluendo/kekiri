@@ -20,7 +20,10 @@ namespace Kekiri
             // ReSharper disable once DoNotCallOverridableMethodsInConstructor
             var reportTarget = CreateReportTarget();
             _scenarioRunner = new ScenarioRunner(this, reportTarget);
+            StepsCaller = this;
         }
+
+        public object StepsCaller { get; set; }
 
         public virtual async Task RunAsync()
         {
